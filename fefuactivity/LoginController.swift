@@ -12,7 +12,7 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
-        
+        navigationController?.isNavigationBarHidden = false
         // Do any additional setup after loading the view.
     }
     
