@@ -13,8 +13,12 @@
 		1DE4E5CC270A5CCE004A30CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DE4E5CA270A5CCE004A30CA /* Main.storyboard */; };
 		1DE4E5CE270A5CD0004A30CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DE4E5CD270A5CD0004A30CA /* Assets.xcassets */; };
 		1DE4E5D1270A5CD0004A30CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DE4E5CF270A5CD0004A30CA /* LaunchScreen.storyboard */; };
-		AFC25DDF28376BEC003093EB /* RegistrationControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC25DDE28376BEC003093EB /* RegistrationControllerViewController.swift */; };
+		AFC25DDF28376BEC003093EB /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC25DDE28376BEC003093EB /* RegistrationController.swift */; };
 		AFC25DE128376CF2003093EB /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC25DE028376CF2003093EB /* LoginController.swift */; };
+		AFC25DF3283E2114003093EB /* MyActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC25DF2283E2114003093EB /* MyActivityViewController.swift */; };
+		AFC25DF5283E3597003093EB /* ActivityInformationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC25DF4283E3597003093EB /* ActivityInformationController.swift */; };
+		AFC25DF8283E4B5A003093EB /* ActivityCellViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC25DF6283E4B5A003093EB /* ActivityCellViewTableViewCell.swift */; };
+		AFC25DF9283E4B5A003093EB /* ActivityCellViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFC25DF7283E4B5A003093EB /* ActivityCellViewTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +30,12 @@
 		1DE4E5CD270A5CD0004A30CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1DE4E5D0270A5CD0004A30CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1DE4E5D2270A5CD0004A30CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AFC25DDE28376BEC003093EB /* RegistrationControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationControllerViewController.swift; sourceTree = "<group>"; };
+		AFC25DDE28376BEC003093EB /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		AFC25DE028376CF2003093EB /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		AFC25DF2283E2114003093EB /* MyActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyActivityViewController.swift; sourceTree = "<group>"; };
+		AFC25DF4283E3597003093EB /* ActivityInformationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityInformationController.swift; sourceTree = "<group>"; };
+		AFC25DF6283E4B5A003093EB /* ActivityCellViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCellViewTableViewCell.swift; sourceTree = "<group>"; };
+		AFC25DF7283E4B5A003093EB /* ActivityCellViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityCellViewTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,15 +68,19 @@
 		1DE4E5C3270A5CCE004A30CA /* fefuactivity */ = {
 			isa = PBXGroup;
 			children = (
+				1DE4E5CA270A5CCE004A30CA /* Main.storyboard */,
 				1DE4E5C4270A5CCE004A30CA /* AppDelegate.swift */,
 				1DE4E5C6270A5CCE004A30CA /* SceneDelegate.swift */,
+				AFC25DDE28376BEC003093EB /* RegistrationController.swift */,
+				AFC25DF2283E2114003093EB /* MyActivityViewController.swift */,
+				AFC25DE028376CF2003093EB /* LoginController.swift */,
 				1DE4E5C8270A5CCE004A30CA /* ViewController.swift */,
-				1DE4E5CA270A5CCE004A30CA /* Main.storyboard */,
 				1DE4E5CD270A5CD0004A30CA /* Assets.xcassets */,
 				1DE4E5CF270A5CD0004A30CA /* LaunchScreen.storyboard */,
 				1DE4E5D2270A5CD0004A30CA /* Info.plist */,
-				AFC25DDE28376BEC003093EB /* RegistrationControllerViewController.swift */,
-				AFC25DE028376CF2003093EB /* LoginController.swift */,
+				AFC25DF4283E3597003093EB /* ActivityInformationController.swift */,
+				AFC25DF6283E4B5A003093EB /* ActivityCellViewTableViewCell.swift */,
+				AFC25DF7283E4B5A003093EB /* ActivityCellViewTableViewCell.xib */,
 			);
 			path = fefuactivity;
 			sourceTree = "<group>";
@@ -133,6 +145,7 @@
 				1DE4E5D1270A5CD0004A30CA /* LaunchScreen.storyboard in Resources */,
 				1DE4E5CE270A5CD0004A30CA /* Assets.xcassets in Resources */,
 				1DE4E5CC270A5CCE004A30CA /* Main.storyboard in Resources */,
+				AFC25DF9283E4B5A003093EB /* ActivityCellViewTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,10 +156,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFC25DF8283E4B5A003093EB /* ActivityCellViewTableViewCell.swift in Sources */,
 				1DE4E5C9270A5CCE004A30CA /* ViewController.swift in Sources */,
+				AFC25DF3283E2114003093EB /* MyActivityViewController.swift in Sources */,
 				1DE4E5C5270A5CCE004A30CA /* AppDelegate.swift in Sources */,
 				1DE4E5C7270A5CCE004A30CA /* SceneDelegate.swift in Sources */,
-				AFC25DDF28376BEC003093EB /* RegistrationControllerViewController.swift in Sources */,
+				AFC25DF5283E3597003093EB /* ActivityInformationController.swift in Sources */,
+				AFC25DDF28376BEC003093EB /* RegistrationController.swift in Sources */,
 				AFC25DE128376CF2003093EB /* LoginController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
