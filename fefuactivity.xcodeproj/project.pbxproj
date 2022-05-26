@@ -19,6 +19,7 @@
 		AFC25DF5283E3597003093EB /* ActivityInformationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC25DF4283E3597003093EB /* ActivityInformationController.swift */; };
 		AFC25DF8283E4B5A003093EB /* ActivityCellViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC25DF6283E4B5A003093EB /* ActivityCellViewTableViewCell.swift */; };
 		AFC25DF9283E4B5A003093EB /* ActivityCellViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFC25DF7283E4B5A003093EB /* ActivityCellViewTableViewCell.xib */; };
+		AFC25DFB283EE7E7003093EB /* NewActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC25DFA283EE7E7003093EB /* NewActivityViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		AFC25DF4283E3597003093EB /* ActivityInformationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityInformationController.swift; sourceTree = "<group>"; };
 		AFC25DF6283E4B5A003093EB /* ActivityCellViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCellViewTableViewCell.swift; sourceTree = "<group>"; };
 		AFC25DF7283E4B5A003093EB /* ActivityCellViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityCellViewTableViewCell.xib; sourceTree = "<group>"; };
+		AFC25DFA283EE7E7003093EB /* NewActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewActivityViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,21 +70,30 @@
 		1DE4E5C3270A5CCE004A30CA /* fefuactivity */ = {
 			isa = PBXGroup;
 			children = (
+				AFC25DFC28404999003093EB /* CustomViews */,
 				1DE4E5CA270A5CCE004A30CA /* Main.storyboard */,
 				1DE4E5C4270A5CCE004A30CA /* AppDelegate.swift */,
 				1DE4E5C6270A5CCE004A30CA /* SceneDelegate.swift */,
-				AFC25DDE28376BEC003093EB /* RegistrationController.swift */,
-				AFC25DF2283E2114003093EB /* MyActivityViewController.swift */,
-				AFC25DE028376CF2003093EB /* LoginController.swift */,
 				1DE4E5C8270A5CCE004A30CA /* ViewController.swift */,
 				1DE4E5CD270A5CD0004A30CA /* Assets.xcassets */,
 				1DE4E5CF270A5CD0004A30CA /* LaunchScreen.storyboard */,
 				1DE4E5D2270A5CD0004A30CA /* Info.plist */,
-				AFC25DF4283E3597003093EB /* ActivityInformationController.swift */,
-				AFC25DF6283E4B5A003093EB /* ActivityCellViewTableViewCell.swift */,
-				AFC25DF7283E4B5A003093EB /* ActivityCellViewTableViewCell.xib */,
 			);
 			path = fefuactivity;
+			sourceTree = "<group>";
+		};
+		AFC25DFC28404999003093EB /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				AFC25DFA283EE7E7003093EB /* NewActivityViewController.swift */,
+				AFC25DF6283E4B5A003093EB /* ActivityCellViewTableViewCell.swift */,
+				AFC25DDE28376BEC003093EB /* RegistrationController.swift */,
+				AFC25DF7283E4B5A003093EB /* ActivityCellViewTableViewCell.xib */,
+				AFC25DF2283E2114003093EB /* MyActivityViewController.swift */,
+				AFC25DE028376CF2003093EB /* LoginController.swift */,
+				AFC25DF4283E3597003093EB /* ActivityInformationController.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +169,7 @@
 			files = (
 				AFC25DF8283E4B5A003093EB /* ActivityCellViewTableViewCell.swift in Sources */,
 				1DE4E5C9270A5CCE004A30CA /* ViewController.swift in Sources */,
+				AFC25DFB283EE7E7003093EB /* NewActivityViewController.swift in Sources */,
 				AFC25DF3283E2114003093EB /* MyActivityViewController.swift in Sources */,
 				1DE4E5C5270A5CCE004A30CA /* AppDelegate.swift in Sources */,
 				1DE4E5C7270A5CCE004A30CA /* SceneDelegate.swift in Sources */,
