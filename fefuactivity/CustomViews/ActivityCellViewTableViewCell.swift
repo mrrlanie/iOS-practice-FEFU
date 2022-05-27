@@ -14,8 +14,11 @@ class ActivityCell: UITableViewCell {
     @IBOutlet var activityNM: UILabel!
     @IBOutlet var activityLT: UILabel!
     
+    @IBOutlet weak var containerView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        containerView.layer.cornerRadius = 10
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
