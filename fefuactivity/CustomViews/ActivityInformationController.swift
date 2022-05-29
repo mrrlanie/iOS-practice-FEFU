@@ -26,4 +26,9 @@ class ActivityInformationController: UIViewController {
         activityLT.text = activitylastedtime + " часов"
         activityDuration.text = activityduration + " часов назад"
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = false
+    }
+    
 }

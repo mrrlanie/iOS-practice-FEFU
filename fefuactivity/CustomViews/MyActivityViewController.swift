@@ -30,13 +30,16 @@ class MyActivityViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView.dataSource = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = false
+    }
+    
     @IBAction func activityButton(_ sender: UIButton){
         emptyState.isHidden = true
         tableView.isHidden = false
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(activitykm.count)
         return activitykm.count
     }
     
