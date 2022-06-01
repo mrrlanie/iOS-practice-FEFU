@@ -184,7 +184,7 @@
         <!--Активность-->
         <scene sceneID="IHb-lh-8TY">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="zlV-IN-js9" customClass="MyActivityViewController" customModule="fefuactivity" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyActivityViewController" modalPresentationStyle="fullScreen" id="zlV-IN-js9" customClass="MyActivityViewController" customModule="fefuactivity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="54P-85-fqk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -604,7 +604,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tVz-uL-1hY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3647.826086956522" y="2201.7857142857142"/>
+            <point key="canvasLocation" x="3807" y="2211"/>
         </scene>
         <!--Войти-->
         <scene sceneID="j9j-BB-0wO">
@@ -753,7 +753,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="4hq-Ki-Snb"/>
+        <segue reference="GMB-gB-gRA"/>
         <segue reference="1y9-zG-ru9"/>
     </inferredMetricsTieBreakers>
     <resources>

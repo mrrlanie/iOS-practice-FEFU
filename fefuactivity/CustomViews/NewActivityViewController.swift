@@ -76,7 +76,7 @@ class NewActivityViewController: UIViewController {
         userLocHistory = []
         userLocation = nil
         
-        if !pauseFlag {
+        if pauseFlag == true {
             pauseAction.setImage(UIImage(named: "play"), for: .normal)
             activityDuration += currentDuration
             currentDuration = TimeInterval()
@@ -110,10 +110,10 @@ class NewActivityViewController: UIViewController {
         activity.start = activityStart
         activity.end = activityEnd
         activity.name = currentName
-        
-        let logView = MyActivityViewController(nibName: "MyActivityViewController", bundle: nil)
-        navigationController?.pushViewController(logView, animated: true)
+        let nextView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MyActivityViewController") as! MyActivityViewController
+        self.navigationController?.pushViewController(nextView, animated: true)
     }
+    
     @objc func timerUpd() {
         let time = Date().timeIntervalSince(startTimer!)
         let timeFormat = DateComponentsFormatter()
@@ -144,10 +144,15 @@ class NewActivityViewController: UIViewController {
     @IBAction func start(_ sender: Any) {
         viewWithButtons.isHidden = false
         viewWithChoice.isHidden = true
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerUpd), userInfo: nil, repeats: true)
+        locationManager.startUpdatingLocation()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        startTimer = Date()
+        activityDate = Date()
         
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
