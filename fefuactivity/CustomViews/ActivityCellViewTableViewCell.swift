@@ -9,6 +9,7 @@ import UIKit
 
 class ActivityCell: UITableViewCell {
     
+    @IBOutlet weak var contentview: UIView!
     @IBOutlet var activityKM: UILabel!
     @IBOutlet var activityDT: UILabel!
     @IBOutlet var activityNM: UILabel!
@@ -16,9 +17,11 @@ class ActivityCell: UITableViewCell {
     
     @IBOutlet weak var containerView: UIView!
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        containerView.layer.cornerRadius = 10
+        contentview.backgroundColor = UIColor.clear
+        containerView.layer.cornerRadius = 8
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

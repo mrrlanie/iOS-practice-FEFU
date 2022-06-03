@@ -24,6 +24,7 @@ class MyActivityViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.backgroundColor = UIColor.lightGray
         let nib = UINib(nibName: "ActivityCellViewTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "ActivityCellView")
         tableView.delegate = self

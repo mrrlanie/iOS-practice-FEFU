@@ -43,6 +43,7 @@ class NewActivityViewController: UIViewController {
     var currentName = "Велосипед"
     
     
+    
     let locationManager: CLLocationManager = {
         let manager = CLLocationManager()
         manager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
@@ -77,13 +78,11 @@ class NewActivityViewController: UIViewController {
         userLocation = nil
         
         if pauseFlag == true {
-            pauseAction.setImage(UIImage(named: "play"), for: .normal)
             activityDuration += currentDuration
             currentDuration = TimeInterval()
             timer?.invalidate()
             locationManager.stopUpdatingLocation()
         } else {
-            pauseAction.setImage(UIImage(named: "pause.fill"), for: .normal)
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerUpd), userInfo: nil, repeats: true)
             locationManager.startUpdatingLocation()
         }
@@ -115,11 +114,11 @@ class NewActivityViewController: UIViewController {
     }
     
     @objc func timerUpd() {
-        let time = Date().timeIntervalSince(startTimer!)
-        let timeFormat = DateComponentsFormatter()
-        timeFormat.allowedUnits = [.hour, .minute, .second]
-        timeFormat.zeroFormattingBehavior = .pad
-        activityTimeInButtons.text = timeFormat.string(from: time + activityDuration)
+        let timeformat = DateComponentsFormatter()
+        timeformat.allowedUnits = [.hour, .minute, .second]
+        timeformat.zeroFormattingBehavior = .pad
+        activityTimeInButtons.text = timeformat.string(from: activityDuration)
+        activityDuration += 1
     }
     
     private var timeFormatter: DateComponentsFormatter = {
@@ -151,6 +150,9 @@ class NewActivityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        pauseAction.setTitle("", for: .normal)
+        finishAction.setTitle("", for: .normal)
+        
         startTimer = Date()
         activityDate = Date()
         
@@ -163,7 +165,7 @@ class NewActivityViewController: UIViewController {
         
         collectionView.dataSource = self
         collectionView.delegate = self
-        
+                
         for i in 0...1 {
             let image = UIImage(named: "image\(i)")!
             images.append(image)
