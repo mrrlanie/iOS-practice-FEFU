@@ -13,6 +13,6 @@ class SegueController: UIStoryboardSegue {
         if let navigationController = self.source.navigationController {
             navigationController.isNavigationBarHidden = true
             navigationController.setViewControllers([self.destination], animated: true)
-            }
+        }
     }
 }
