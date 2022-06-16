@@ -109,8 +109,6 @@ class NewActivityViewController: UIViewController {
         activity.start = activityStart
         activity.end = activityEnd
         activity.name = currentName
-        let nextView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MyActivityViewController") as! MyActivityViewController
-        self.navigationController?.pushViewController(nextView, animated: true)
     }
     
     @objc func timerUpd() {

@@ -80,33 +80,65 @@
 		1DE4E5C3270A5CCE004A30CA /* fefuactivity */ = {
 			isa = PBXGroup;
 			children = (
+				AFA1CBE0285BA37900F24D16 /* MainStuff */,
+				AFA1CBDF285BA36900F24D16 /* CustomStuff */,
+				AFA1CBDE285BA35900F24D16 /* LoginStuff */,
+				AFA1CBDD285BA34B00F24D16 /* RegistrationStuff */,
+				AFA1CBDC285BA32B00F24D16 /* ActivityStuff */,
 				AFC25E1228434DD3003093EB /* CoreDataStuff */,
-				AFC25DFC28404999003093EB /* CustomViews */,
-				1DE4E5CA270A5CCE004A30CA /* Main.storyboard */,
-				1DE4E5C4270A5CCE004A30CA /* AppDelegate.swift */,
-				1DE4E5C6270A5CCE004A30CA /* SceneDelegate.swift */,
-				1DE4E5C8270A5CCE004A30CA /* ViewController.swift */,
 				1DE4E5CD270A5CD0004A30CA /* Assets.xcassets */,
-				1DE4E5CF270A5CD0004A30CA /* LaunchScreen.storyboard */,
 				1DE4E5D2270A5CD0004A30CA /* Info.plist */,
 			);
 			path = fefuactivity;
 			sourceTree = "<group>";
 		};
-		AFC25DFC28404999003093EB /* CustomViews */ = {
+		AFA1CBDC285BA32B00F24D16 /* ActivityStuff */ = {
 			isa = PBXGroup;
 			children = (
-				AFC25DFA283EE7E7003093EB /* NewActivityViewController.swift */,
-				AFC25DF6283E4B5A003093EB /* ActivityCellViewTableViewCell.swift */,
-				AFC25DDE28376BEC003093EB /* RegistrationController.swift */,
+				AFC25DF4283E3597003093EB /* ActivityInformationController.swift */,
+				AFC25E1028434CAF003093EB /* CollectionCellView.swift */,
 				AFC25DF7283E4B5A003093EB /* ActivityCellViewTableViewCell.xib */,
 				AFC25DF2283E2114003093EB /* MyActivityViewController.swift */,
-				AFC25DE028376CF2003093EB /* LoginController.swift */,
-				AFC25DF4283E3597003093EB /* ActivityInformationController.swift */,
-				AFC25E072840B53B003093EB /* SegueController.swift */,
-				AFC25E1028434CAF003093EB /* CollectionCellView.swift */,
+				AFC25DFA283EE7E7003093EB /* NewActivityViewController.swift */,
+				AFC25DF6283E4B5A003093EB /* ActivityCellViewTableViewCell.swift */,
 			);
-			path = CustomViews;
+			path = ActivityStuff;
+			sourceTree = "<group>";
+		};
+		AFA1CBDD285BA34B00F24D16 /* RegistrationStuff */ = {
+			isa = PBXGroup;
+			children = (
+				AFC25DDE28376BEC003093EB /* RegistrationController.swift */,
+			);
+			path = RegistrationStuff;
+			sourceTree = "<group>";
+		};
+		AFA1CBDE285BA35900F24D16 /* LoginStuff */ = {
+			isa = PBXGroup;
+			children = (
+				AFC25DE028376CF2003093EB /* LoginController.swift */,
+			);
+			path = LoginStuff;
+			sourceTree = "<group>";
+		};
+		AFA1CBDF285BA36900F24D16 /* CustomStuff */ = {
+			isa = PBXGroup;
+			children = (
+				AFC25E072840B53B003093EB /* SegueController.swift */,
+			);
+			path = CustomStuff;
+			sourceTree = "<group>";
+		};
+		AFA1CBE0285BA37900F24D16 /* MainStuff */ = {
+			isa = PBXGroup;
+			children = (
+				1DE4E5C4270A5CCE004A30CA /* AppDelegate.swift */,
+				1DE4E5C6270A5CCE004A30CA /* SceneDelegate.swift */,
+				1DE4E5C8270A5CCE004A30CA /* ViewController.swift */,
+				1DE4E5CF270A5CD0004A30CA /* LaunchScreen.storyboard */,
+				1DE4E5CA270A5CCE004A30CA /* Main.storyboard */,
+			);
+			path = MainStuff;
 			sourceTree = "<group>";
 		};
 		AFC25E1228434DD3003093EB /* CoreDataStuff */ = {

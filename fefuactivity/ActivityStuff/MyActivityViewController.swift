@@ -21,14 +21,21 @@ class MyActivityViewController: UIViewController, UITableViewDelegate, UITableVi
     let activitynames = ["Велосипед", "Бег"]
     let activitylastedtime = ["5", "0"]
     var sectionnames = ["22.05.2022"]
+    var data = [ActivityData]();
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.backgroundColor = UIColor.lightGray
+        let colour = UIColor(named: "TableViewColor")
+        tableView.backgroundColor = colour
+        tableView.separatorStyle = .none
         let nib = UINib(nibName: "ActivityCellViewTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "ActivityCellView")
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     override func viewWillAppear(_ animated: Bool) {

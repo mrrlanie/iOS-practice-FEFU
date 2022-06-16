@@ -58,7 +58,6 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="RNX-lo-Zb7" secondAttribute="bottom" constant="8" id="00n-bQ-nHe"/>
                             <constraint firstItem="1az-Bw-RuX" firstAttribute="top" secondItem="Ss9-oD-V4U" secondAttribute="bottom" constant="10" id="0Nv-C3-Wqp"/>
-                            <constraint firstItem="RNX-lo-Zb7" firstAttribute="leading" secondItem="feF-v5-ive" secondAttribute="trailing" constant="57" id="3SP-r1-zqt"/>
                             <constraint firstItem="1az-Bw-RuX" firstAttribute="leading" secondItem="fW9-Af-nt6" secondAttribute="leading" constant="8" id="AZk-Zh-r63"/>
                             <constraint firstItem="Ss9-oD-V4U" firstAttribute="leading" secondItem="fW9-Af-nt6" secondAttribute="leading" constant="8" id="FlS-ap-tFh"/>
                             <constraint firstItem="feF-v5-ive" firstAttribute="top" secondItem="1az-Bw-RuX" secondAttribute="bottom" constant="37" id="GWe-pZ-84Z"/>
