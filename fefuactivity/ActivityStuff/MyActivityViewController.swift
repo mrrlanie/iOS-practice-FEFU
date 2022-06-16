@@ -40,6 +40,8 @@ class MyActivityViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = false
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        
     }
     
     @IBAction func activityButton(_ sender: UIButton){

@@ -186,11 +186,11 @@
             <objects>
                 <viewController storyboardIdentifier="MyActivityViewController" modalPresentationStyle="fullScreen" id="zlV-IN-js9" customClass="MyActivityViewController" customModule="fefuactivity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="54P-85-fqk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hKC-Wd-AQ9">
-                                <rect key="frame" x="0.0" y="56" width="414" height="655.5"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="667.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="626" id="b6p-2I-eAT"/>
@@ -477,7 +477,7 @@
                                                 <buttonConfiguration key="configuration" style="filled" image="flag" catalog="system"/>
                                                 <connections>
                                                     <action selector="finish:" destination="UHL-Gt-dJw" eventType="touchUpInside" id="Mm9-kw-8S8"/>
-                                                    <segue destination="h13-Jz-AIs" kind="show" id="N9L-zB-UQh"/>
+                                                    <segue destination="zlV-IN-js9" kind="show" id="2jh-d0-Ypp"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -507,8 +507,8 @@
                                     <constraint firstItem="s7m-dD-gVb" firstAttribute="leading" secondItem="L3c-BT-zUt" secondAttribute="leading" constant="122" id="zan-Jq-XMm"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eIn-1N-2mn">
-                                <rect key="frame" x="-4" y="556" width="418" height="285.5"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eIn-1N-2mn">
+                                <rect key="frame" x="-4" y="345" width="418" height="285.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Погнали? :)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCU-eY-lQO">
                                         <rect key="frame" x="149" y="19" width="120" height="26.5"/>
@@ -776,7 +776,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="GMB-gB-gRA"/>
-        <segue reference="N9L-zB-UQh"/>
+        <segue reference="2jh-d0-Ypp"/>
         <segue reference="Pha-4x-B9Q"/>
     </inferredMetricsTieBreakers>
     <resources>
