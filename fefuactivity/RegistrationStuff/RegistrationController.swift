@@ -15,18 +15,19 @@ class RegistrationController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.isNavigationBarHidden = false
         
-        let maleItem = UIAction(title: "Мужчина", image: UIImage(systemName: "suit.heart.fill")?.withTintColor(.systemBlue)) { (action) in
+
+        let maleItem = UIAction(title: "Мужчина", image: UIImage(systemName: "hand.wave.fill")) { (action) in
 
             self.genderButton.setTitle("Мужчина", for: .normal)
          }
         
-        let femaleItem = UIAction(title: "Женщина", image: UIImage(systemName: "suit.heart.fill")?.withTintColor(.systemRed)) { (action) in
+        let femaleItem = UIAction(title: "Женщина", image: UIImage(systemName: "hands.clap.fill")) { (action) in
 
             self.genderButton.setTitle("Женщина", for: .normal)
 
          }
         
-        let helicopterItem = UIAction(title: "Вертолет", image: UIImage(systemName: "suit.heart.fill")?.withTintColor(.systemIndigo)) { (action) in
+        let helicopterItem = UIAction(title: "Вертолет", image: UIImage(systemName: "hands.sparkles.fill")) { (action) in
 
             self.genderButton.setTitle("Вертолет", for: .normal)
             

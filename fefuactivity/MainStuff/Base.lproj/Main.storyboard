@@ -507,8 +507,8 @@
                                     <constraint firstItem="s7m-dD-gVb" firstAttribute="leading" secondItem="L3c-BT-zUt" secondAttribute="leading" constant="122" id="zan-Jq-XMm"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eIn-1N-2mn">
-                                <rect key="frame" x="-4" y="345" width="418" height="285.5"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eIn-1N-2mn">
+                                <rect key="frame" x="-4" y="556" width="418" height="285.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Погнали? :)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCU-eY-lQO">
                                         <rect key="frame" x="149" y="19" width="120" height="26.5"/>
