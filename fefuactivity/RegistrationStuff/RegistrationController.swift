@@ -16,18 +16,18 @@ class RegistrationController: UIViewController {
         navigationController?.isNavigationBarHidden = false
         
 
-        let maleItem = UIAction(title: "Мужчина", image: UIImage(systemName: "hand.wave.fill")) { (action) in
+        let maleItem = UIAction(title: "Мужчина", image: UIImage(systemName: "hand.wave.fill")?.withTintColor(.systemIndigo).withRenderingMode(.alwaysOriginal)) { (action) in
 
             self.genderButton.setTitle("Мужчина", for: .normal)
          }
         
-        let femaleItem = UIAction(title: "Женщина", image: UIImage(systemName: "hands.clap.fill")) { (action) in
+        let femaleItem = UIAction(title: "Женщина", image: UIImage(systemName: "hands.clap.fill")?.withTintColor(.systemTeal).withRenderingMode(.alwaysOriginal)) { (action) in
 
             self.genderButton.setTitle("Женщина", for: .normal)
 
          }
         
-        let helicopterItem = UIAction(title: "Вертолет", image: UIImage(systemName: "hands.sparkles.fill")) { (action) in
+        let helicopterItem = UIAction(title: "Вертолет", image: UIImage(systemName: "hands.sparkles.fill")?.withTintColor(.systemPurple).withRenderingMode(.alwaysOriginal)) { (action) in
 
             self.genderButton.setTitle("Вертолет", for: .normal)
             
