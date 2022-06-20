@@ -19,18 +19,20 @@ class RegistrationController: UIViewController {
         let maleItem = UIAction(title: "Мужчина", image: UIImage(systemName: "hand.wave.fill")?.withTintColor(.systemIndigo).withRenderingMode(.alwaysOriginal)) { (action) in
 
             self.genderButton.setTitle("Мужчина", for: .normal)
-         }
+            self.genderButton.setTitleColor(.systemIndigo, for: .normal)
+            
+        }
         
         let femaleItem = UIAction(title: "Женщина", image: UIImage(systemName: "hands.clap.fill")?.withTintColor(.systemTeal).withRenderingMode(.alwaysOriginal)) { (action) in
 
             self.genderButton.setTitle("Женщина", for: .normal)
-
+            self.genderButton.setTitleColor(.systemTeal, for: .normal)
          }
         
         let helicopterItem = UIAction(title: "Вертолет", image: UIImage(systemName: "hands.sparkles.fill")?.withTintColor(.systemPurple).withRenderingMode(.alwaysOriginal)) { (action) in
 
             self.genderButton.setTitle("Вертолет", for: .normal)
-            
+            self.genderButton.setTitleColor(.systemPurple, for: .normal)
         }
         
         let gendermenu = UIMenu(title: "Выберите пол", options: .displayInline, children: [maleItem, femaleItem, helicopterItem])
