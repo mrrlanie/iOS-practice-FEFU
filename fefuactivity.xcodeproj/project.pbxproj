@@ -13,6 +13,8 @@
 		1DE4E5CC270A5CCE004A30CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DE4E5CA270A5CCE004A30CA /* Main.storyboard */; };
 		1DE4E5CE270A5CD0004A30CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DE4E5CD270A5CD0004A30CA /* Assets.xcassets */; };
 		1DE4E5D1270A5CD0004A30CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DE4E5CF270A5CD0004A30CA /* LaunchScreen.storyboard */; };
+		AFA1CBF22860D9DB00F24D16 /* CompositionalLayoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA1CBF02860D9DB00F24D16 /* CompositionalLayoutCell.swift */; };
+		AFA1CBF32860D9DB00F24D16 /* CompositionalLayoutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFA1CBF12860D9DB00F24D16 /* CompositionalLayoutCell.xib */; };
 		AFC25DDF28376BEC003093EB /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC25DDE28376BEC003093EB /* RegistrationController.swift */; };
 		AFC25DE128376CF2003093EB /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC25DE028376CF2003093EB /* LoginController.swift */; };
 		AFC25DF3283E2114003093EB /* MyActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC25DF2283E2114003093EB /* MyActivityViewController.swift */; };
@@ -36,6 +38,8 @@
 		1DE4E5CD270A5CD0004A30CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1DE4E5D0270A5CD0004A30CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1DE4E5D2270A5CD0004A30CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFA1CBF02860D9DB00F24D16 /* CompositionalLayoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionalLayoutCell.swift; sourceTree = "<group>"; };
+		AFA1CBF12860D9DB00F24D16 /* CompositionalLayoutCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompositionalLayoutCell.xib; sourceTree = "<group>"; };
 		AFC25DDE28376BEC003093EB /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		AFC25DE028376CF2003093EB /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		AFC25DF2283E2114003093EB /* MyActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyActivityViewController.swift; sourceTree = "<group>"; };
@@ -95,12 +99,8 @@
 		AFA1CBDC285BA32B00F24D16 /* ActivityStuff */ = {
 			isa = PBXGroup;
 			children = (
-				AFC25DF4283E3597003093EB /* ActivityInformationController.swift */,
-				AFC25E1028434CAF003093EB /* CollectionCellView.swift */,
-				AFC25DF7283E4B5A003093EB /* ActivityCellViewTableViewCell.xib */,
-				AFC25DF2283E2114003093EB /* MyActivityViewController.swift */,
-				AFC25DFA283EE7E7003093EB /* NewActivityViewController.swift */,
-				AFC25DF6283E4B5A003093EB /* ActivityCellViewTableViewCell.swift */,
+				AFA1CBEF2860D97E00F24D16 /* NewActivity */,
+				AFA1CBEE2860D94A00F24D16 /* ActivityTable */,
 			);
 			path = ActivityStuff;
 			sourceTree = "<group>";
@@ -139,6 +139,28 @@
 				1DE4E5CA270A5CCE004A30CA /* Main.storyboard */,
 			);
 			path = MainStuff;
+			sourceTree = "<group>";
+		};
+		AFA1CBEE2860D94A00F24D16 /* ActivityTable */ = {
+			isa = PBXGroup;
+			children = (
+				AFC25E1028434CAF003093EB /* CollectionCellView.swift */,
+				AFC25DF4283E3597003093EB /* ActivityInformationController.swift */,
+				AFC25DF7283E4B5A003093EB /* ActivityCellViewTableViewCell.xib */,
+				AFC25DF6283E4B5A003093EB /* ActivityCellViewTableViewCell.swift */,
+				AFC25DF2283E2114003093EB /* MyActivityViewController.swift */,
+			);
+			path = ActivityTable;
+			sourceTree = "<group>";
+		};
+		AFA1CBEF2860D97E00F24D16 /* NewActivity */ = {
+			isa = PBXGroup;
+			children = (
+				AFC25DFA283EE7E7003093EB /* NewActivityViewController.swift */,
+				AFA1CBF02860D9DB00F24D16 /* CompositionalLayoutCell.swift */,
+				AFA1CBF12860D9DB00F24D16 /* CompositionalLayoutCell.xib */,
+			);
+			path = NewActivity;
 			sourceTree = "<group>";
 		};
 		AFC25E1228434DD3003093EB /* CoreDataStuff */ = {
@@ -208,6 +230,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFA1CBF32860D9DB00F24D16 /* CompositionalLayoutCell.xib in Resources */,
 				1DE4E5D1270A5CD0004A30CA /* LaunchScreen.storyboard in Resources */,
 				1DE4E5CE270A5CD0004A30CA /* Assets.xcassets in Resources */,
 				1DE4E5CC270A5CCE004A30CA /* Main.storyboard in Resources */,
@@ -229,6 +252,7 @@
 				AFC25E1628434FA3003093EB /* CoreController.swift in Sources */,
 				AFC25E0F28434B1D003093EB /* ActivityData.xcdatamodeld in Sources */,
 				AFC25DF3283E2114003093EB /* MyActivityViewController.swift in Sources */,
+				AFA1CBF22860D9DB00F24D16 /* CompositionalLayoutCell.swift in Sources */,
 				1DE4E5C5270A5CCE004A30CA /* AppDelegate.swift in Sources */,
 				AFC25E082840B53B003093EB /* SegueController.swift in Sources */,
 				1DE4E5C7270A5CCE004A30CA /* SceneDelegate.swift in Sources */,

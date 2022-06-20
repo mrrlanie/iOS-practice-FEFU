@@ -11,6 +11,7 @@ import CoreLocation
 import SwiftUI
 
 class NewActivityViewController: UIViewController {
+    
 
     @IBOutlet weak var viewWithButtons: UIView!
     @IBOutlet weak var viewWithChoice: UIView!
@@ -109,6 +110,8 @@ class NewActivityViewController: UIViewController {
         activity.start = activityStart
         activity.end = activityEnd
         activity.name = currentName
+        
+        navigationController?.popViewController(animated: true)
     }
     
     @objc func timerUpd() {
@@ -143,13 +146,18 @@ class NewActivityViewController: UIViewController {
         viewWithChoice.isHidden = true
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerUpd), userInfo: nil, repeats: true)
         locationManager.startUpdatingLocation()
+            	
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         pauseAction.setTitle("", for: .normal)
+        pauseAction.clipsToBounds = true
+        pauseAction.layer.cornerRadius = 0.5 * pauseAction.bounds.size.width
+        finishAction.clipsToBounds = true
         finishAction.setTitle("", for: .normal)
+        finishAction.layer.cornerRadius = 0.5 * finishAction.bounds.size.width
         
         startTimer = Date()
         activityDate = Date()
@@ -158,16 +166,38 @@ class NewActivityViewController: UIViewController {
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
         
+        collectionView.delegate = self
+        collectionView.collectionViewLayout = layout()
+        collectionView.dataSource = self
+        collectionView.register(CompositionalLayoutCell.nib(), forCellWithReuseIdentifier: CompositionalLayoutCell.reuseId)
+        
         mapView.showsUserLocation = true
         mapView.delegate = self
         
-        collectionView.dataSource = self
-        collectionView.delegate = self
                 
         for i in 0...1 {
             let image = UIImage(named: "image\(i)")!
             images.append(image)
         }
+    }
+    
+    private func layout() -> UICollectionViewCompositionalLayout{
+        return UICollectionViewCompositionalLayout { (sectionNumber, env ) -> NSCollectionLayoutSection in
+            
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+            let item = NSCollectionLayoutItem(layoutSize: itemSize)
+            
+            item.contentInsets.trailing = 16
+            
+            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(99))
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+            
+            let section = NSCollectionLayoutSection(group: group)
+            section.orthogonalScrollingBehavior = .paging
+            section.contentInsets.leading = 16
+            return section
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -177,25 +207,31 @@ class NewActivityViewController: UIViewController {
 
 private let userLocationIdentifier = "user_icon"
 
-extension NewActivityViewController: UICollectionViewDataSource, UICollectionViewDelegate{
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return activityTypes.count
-    }
+extension NewActivityViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Coolection", for: indexPath) as! CollectionCellView
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CompositionalLayoutCell.reuseId, for: indexPath) as? CompositionalLayoutCell else {
+            return UICollectionViewCell()
+        }
         let img = images[indexPath.row]
-        cell.activityPic.image = img
         let label = activityTypes[indexPath.row]
-        cell.activityName.text = label
-        activityList.append(label)
+        cell.layer.borderWidth = 2
+        cell.layer.borderColor = UIColor.purple.cgColor
+        cell.configure(title: label, image: img)
+        activityNameInButtons.text = label
         return cell
-        }
-        
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-            currentName = activityList[indexPath.row]
-            self.activityNameInButtons.text = currentName
-        }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        1
+    }
+    
+}
+
+
 extension NewActivityViewController: CLLocationManagerDelegate {
         func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
             guard let currentLocation = locations.first else {
