@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class MyActivityViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
@@ -32,6 +33,8 @@ class MyActivityViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView.register(nib, forCellReuseIdentifier: "ActivityCellView")
         tableView.delegate = self
         tableView.dataSource = self
+        
+        fetch()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -48,17 +51,30 @@ class MyActivityViewController: UIViewController, UITableViewDelegate, UITableVi
         emptyState.isHidden = true
         tableView.isHidden = false
     }
-    
+    private func fetch(){
+        let context = CoreContainer.instance.context
+        let fetchRequest = NSFetchRequest<ActivityData>(entityName: "ActivityData")
+        
+        do {
+            let activity = try context.fetch(fetchRequest)
+            data = activity.self
+            tableView.reloadData()
+        } catch {
+            print(error)
+        }
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return activitykm.count
+        return data.count
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let activity = data[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "ActivityCellView", for: indexPath) as! ActivityCell
-        cell.activityKM.text = activitykm[indexPath.row] + " км"
-        cell.activityDT.text = activitydurations[indexPath.row] + " часов"
-        cell.activityNM.text = activitynames[indexPath.row]
-        cell.activityLT.text = activitylastedtime[indexPath.row] + " часов назад"
+        cell.activityKM.text = String(round(activity.distance)) + " км"
+        cell.activityDT.text = String(round(activity.duration)) + " часов"
+        cell.activityNM.text = activity.name
+        //cell.activityLT.text = hours
         return cell
     }
     
@@ -73,11 +89,11 @@ class MyActivityViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "ShowActivity", sender: tableView.cellForRow(at: indexPath))
-        
-        currentname = activitynames[indexPath.row]
-        currenttime = activitydurations[indexPath.row]
-        currentkm = activitykm[indexPath.row]
-        currentlastedtime = activitylastedtime[indexPath.row]
+        let activity = data[indexPath.row]
+        currentname = activity.name!
+        currenttime = String(round(activity.duration))
+        currentkm = String(round(activity.distance))
+        //currentlastedtime =
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

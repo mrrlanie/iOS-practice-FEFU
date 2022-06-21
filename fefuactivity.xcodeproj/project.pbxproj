@@ -144,7 +144,6 @@
 		AFA1CBEE2860D94A00F24D16 /* ActivityTable */ = {
 			isa = PBXGroup;
 			children = (
-				AFC25E1028434CAF003093EB /* CollectionCellView.swift */,
 				AFC25DF4283E3597003093EB /* ActivityInformationController.swift */,
 				AFC25DF7283E4B5A003093EB /* ActivityCellViewTableViewCell.xib */,
 				AFC25DF6283E4B5A003093EB /* ActivityCellViewTableViewCell.swift */,
@@ -159,6 +158,7 @@
 				AFC25DFA283EE7E7003093EB /* NewActivityViewController.swift */,
 				AFA1CBF02860D9DB00F24D16 /* CompositionalLayoutCell.swift */,
 				AFA1CBF12860D9DB00F24D16 /* CompositionalLayoutCell.xib */,
+				AFC25E1028434CAF003093EB /* CollectionCellView.swift */,
 			);
 			path = NewActivity;
 			sourceTree = "<group>";

@@ -41,7 +41,7 @@ class NewActivityViewController: UIViewController {
     
     var images = [UIImage]()
     var activityList = [String]()
-    var currentName = "Велосипед"
+    var currentName = ""
     
     
     
@@ -110,6 +110,12 @@ class NewActivityViewController: UIViewController {
         activity.start = activityStart
         activity.end = activityEnd
         activity.name = currentName
+        
+        do {
+            try context.save()
+        } catch {
+            print(error)
+        }
         
         navigationController?.popViewController(animated: true)
     }
