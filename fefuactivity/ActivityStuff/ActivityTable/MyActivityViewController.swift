@@ -17,10 +17,6 @@ class MyActivityViewController: UIViewController, UITableViewDelegate, UITableVi
     var currenttime: String = "0"
     var currentname: String = "Название"
     var currentlastedtime: String = "0"
-    let activitykm = ["15.4", "21"]
-    let activitydurations = ["4", "15"]
-    let activitynames = ["Велосипед", "Бег"]
-    let activitylastedtime = ["5", "0"]
     var sectionnames = ["22.05.2022"]
     var data = [ActivityData]();
     
@@ -58,10 +54,11 @@ class MyActivityViewController: UIViewController, UITableViewDelegate, UITableVi
         do {
             let activity = try context.fetch(fetchRequest)
             data = activity.self
-            tableView.reloadData()
         } catch {
             print(error)
         }
+        tableView.reloadData()
+        
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count

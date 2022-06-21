@@ -106,10 +106,10 @@ class NewActivityViewController: UIViewController {
         let activityEnd = dateFormat.string(from: activityDate! + activityDuration)
         
         activity.date = activityDate
-        activity.distance = activityDistance
+        activity.distance = round(activityDistance/1000)
         activity.start = activityStart
         activity.end = activityEnd
-        activity.name = currentName
+        activity.name = activityNameInButtons.text
         
         do {
             try context.save()
@@ -180,7 +180,8 @@ class NewActivityViewController: UIViewController {
         mapView.showsUserLocation = true
         mapView.delegate = self
         
-                
+        coreContainer.context.reset()
+        
         for i in 0...1 {
             let image = UIImage(named: "image\(i)")!
             images.append(image)
