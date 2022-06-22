@@ -29,12 +29,11 @@ class MyActivityViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView.register(nib, forCellReuseIdentifier: "ActivityCellView")
         tableView.delegate = self
         tableView.dataSource = self
-        
-        fetch()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        fetch()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -68,8 +67,14 @@ class MyActivityViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let activity = data[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "ActivityCellView", for: indexPath) as! ActivityCell
-        cell.activityKM.text = String(round(activity.distance)) + " км"
-        cell.activityDT.text = String(round(activity.duration)) + " часов"
+        cell.activityKM.text = String(format: "%.4f", activity.distance/1000) + " км"
+        if round(activity.duration) == 0 {
+            let durationInMins = activity.duration * 60
+            cell.activityDT.text = String(format: "%.4f", durationInMins) + " минут"
+        } else {
+            cell.activityDT.text = String(format: "%.1f", activity.duration) + " часов"
+            
+        }
         cell.activityNM.text = activity.name
         //cell.activityLT.text = hours
         return cell
@@ -88,8 +93,8 @@ class MyActivityViewController: UIViewController, UITableViewDelegate, UITableVi
         performSegue(withIdentifier: "ShowActivity", sender: tableView.cellForRow(at: indexPath))
         let activity = data[indexPath.row]
         currentname = activity.name!
-        currenttime = String(round(activity.duration))
-        currentkm = String(round(activity.distance))
+        currenttime = String(format: "%.1f", activity.duration)
+        currentkm = String(format: "%.4f", activity.distance/1000)
         //currentlastedtime =
     }
     
