@@ -76,7 +76,18 @@ class MyActivityViewController: UIViewController, UITableViewDelegate, UITableVi
             
         }
         cell.activityNM.text = activity.name
-        //cell.activityLT.text = hours
+        let lastedTimed = abs(NSInteger(activity.date!.timeIntervalSinceNow/3600))
+        let lastDigit = lastedTimed % 10
+        switch lastDigit {
+            case 0, 5, 6, 7, 8, 9:
+                cell.activityLT.text =  String(lastedTimed) + " часов назад"
+            case 1:
+                cell.activityLT.text =  String(lastedTimed) + " час назад"
+            case 2, 3, 4:
+                cell.activityLT.text =  String(lastedTimed) + " часа назад"
+            default:
+                break
+        }
         return cell
     }
     
@@ -93,9 +104,20 @@ class MyActivityViewController: UIViewController, UITableViewDelegate, UITableVi
         performSegue(withIdentifier: "ShowActivity", sender: tableView.cellForRow(at: indexPath))
         let activity = data[indexPath.row]
         currentname = activity.name!
-        currenttime = String(format: "%.1f", activity.duration)
-        currentkm = String(format: "%.4f", activity.distance/1000)
-        //currentlastedtime =
+        currenttime = String(format: "%.1f", activity.duration) + " км"
+        currentkm = String(format: "%.4f", activity.distance/1000) + " км"
+        let lastedTimed = abs(NSInteger(activity.date!.timeIntervalSinceNow/3600))
+        let lastDigit = lastedTimed % 10
+        switch lastDigit {
+            case 0, 5, 6, 7, 8, 9:
+                currentlastedtime =  String(lastedTimed) + " часов назад"
+            case 1:
+                currentlastedtime =  String(lastedTimed) + " час назад"
+            case 2, 3, 4:
+                currentlastedtime =  String(lastedTimed) + " часа назад"
+            default:
+                break
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

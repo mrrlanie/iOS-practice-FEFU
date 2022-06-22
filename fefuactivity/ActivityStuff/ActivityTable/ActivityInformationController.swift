@@ -22,9 +22,9 @@ class ActivityInformationController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         activityName.text = activityname
-        activityKm.text = activitykm + " км"
-        activityLT.text = activitylastedtime + " часов"
-        activityDuration.text = activityduration + " часов назад"
+        activityKm.text = activitykm
+        activityLT.text = activitylastedtime
+        activityDuration.text = activityduration
     }
     
     override func viewWillAppear(_ animated: Bool) {
