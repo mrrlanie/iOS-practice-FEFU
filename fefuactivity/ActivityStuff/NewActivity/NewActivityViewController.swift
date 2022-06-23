@@ -172,7 +172,7 @@ class NewActivityViewController: UIViewController {
         collectionView.collectionViewLayout = layout()
         collectionView.dataSource = self
         collectionView.register(CompositionalLayoutCell.nib(), forCellWithReuseIdentifier: CompositionalLayoutCell.reuseId)
-                
+        
         mapView.showsUserLocation = true
         mapView.delegate = self
         
@@ -181,7 +181,7 @@ class NewActivityViewController: UIViewController {
             images.append(image)
         }
     }
-    
+    		
     private func layout() -> UICollectionViewCompositionalLayout{
         return UICollectionViewCompositionalLayout { (sectionNumber, env ) -> NSCollectionLayoutSection in
             
@@ -190,7 +190,7 @@ class NewActivityViewController: UIViewController {
             
             item.contentInsets.trailing = 16
             
-            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(99))
+            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9), heightDimension: .absolute(90))
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
             
             let section = NSCollectionLayoutSection(group: group)
@@ -216,13 +216,9 @@ extension NewActivityViewController: UICollectionViewDelegate, UICollectionViewD
         let img = images[indexPath.row]
         let label = activityTypes[indexPath.row]
         cell.configure(title: label, image: img)
-        if cell.isHidden == false {
-            cell.layer.borderWidth = 2
-            cell.layer.borderColor = UIColor.systemPurple.cgColor
-            activityNameInButtons.text = label
-        }
         return cell
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 2
@@ -267,4 +263,3 @@ extension NewActivityViewController: MKMapViewDelegate{
         return nil
     }
 }
-    

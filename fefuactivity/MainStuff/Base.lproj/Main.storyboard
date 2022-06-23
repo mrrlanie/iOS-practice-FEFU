@@ -514,17 +514,6 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tNF-zA-bLo">
-                                        <rect key="frame" x="82" y="68" width="254" height="116"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qgq-wh-CwW">
-                                            <size key="itemSize" width="236" height="99"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
-                                        <cells/>
-                                    </collectionView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BG8-Ep-hpF">
                                         <rect key="frame" x="59" y="192" width="311" height="50"/>
                                         <constraints>
@@ -538,6 +527,17 @@
                                             <action selector="start:" destination="UHL-Gt-dJw" eventType="touchUpInside" id="Q5Q-MK-HJc"/>
                                         </connections>
                                     </button>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tNF-zA-bLo">
+                                        <rect key="frame" x="33" y="68" width="356" height="116"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qgq-wh-CwW">
+                                            <size key="itemSize" width="236" height="99"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells/>
+                                    </collectionView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -545,8 +545,8 @@
                                     <constraint firstAttribute="trailing" secondItem="BG8-Ep-hpF" secondAttribute="trailing" constant="48" id="Fdd-Mk-JUo"/>
                                     <constraint firstAttribute="bottom" secondItem="BG8-Ep-hpF" secondAttribute="bottom" constant="43.5" id="XR7-Qj-M32"/>
                                     <constraint firstAttribute="bottom" secondItem="tNF-zA-bLo" secondAttribute="bottom" constant="101.5" id="df8-hv-jeY"/>
-                                    <constraint firstAttribute="trailing" secondItem="tNF-zA-bLo" secondAttribute="trailing" constant="82" id="dp3-Bb-Zgx"/>
-                                    <constraint firstItem="tNF-zA-bLo" firstAttribute="leading" secondItem="eIn-1N-2mn" secondAttribute="leading" constant="82" id="jHT-jp-O68"/>
+                                    <constraint firstAttribute="trailing" secondItem="tNF-zA-bLo" secondAttribute="trailing" constant="29" id="dp3-Bb-Zgx"/>
+                                    <constraint firstItem="tNF-zA-bLo" firstAttribute="leading" secondItem="eIn-1N-2mn" secondAttribute="leading" constant="33" id="jHT-jp-O68"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lCU-eY-lQO" secondAttribute="trailing" constant="20" symbolic="YES" id="k4a-nX-CnV"/>
                                     <constraint firstAttribute="bottom" secondItem="lCU-eY-lQO" secondAttribute="bottom" constant="240" id="oAO-tR-udR"/>
                                     <constraint firstItem="lCU-eY-lQO" firstAttribute="top" secondItem="eIn-1N-2mn" secondAttribute="top" constant="19" id="uKa-Qr-kWZ"/>

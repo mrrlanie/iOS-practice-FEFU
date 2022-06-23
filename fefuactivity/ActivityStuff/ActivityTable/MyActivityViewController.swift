@@ -11,7 +11,7 @@ import SwiftUI
 
 struct my_section {
     var title: String
-    var activity: ActivityData
+    var activity: [ActivityData]
     
  }
 
@@ -25,7 +25,12 @@ class MyActivityViewController: UIViewController, UITableViewDelegate, UITableVi
     var currentname: String = "Название"
     var currentlastedtime: String = "0"
     var data = [ActivityData]();
-    var sections = [my_section(title: "Сегодня", activity: ActivityData())]
+    var counts = [0,0,0]
+    var sections: [my_section?] = []
+    var arrayToday = [ActivityData]();
+    var arrayYesterday = [ActivityData]();
+    var arrayDBY = [ActivityData]();
+    var arrayOtherDate = [ActivityData]();
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,44 +72,40 @@ class MyActivityViewController: UIViewController, UITableViewDelegate, UITableVi
         }
         
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        print()
+        return (sections[section]?.activity.count)!
     }
     
     func sectionWork() {
         for active in data {
             let lastedTimed = abs(NSInteger(active.date!.timeIntervalSinceNow/3600))
             print(lastedTimed)
-            switch lastedTimed {
-                    case 0..<24 :
-                        let section = my_section(title: "Сегодня", activity: active)
-                        sections.append(section)
-                    case 24..<48:
-                        sections.append(my_section(title: "Вчера", activity: active))
-                    case 48..<72:
-                        let section = my_section(title: "Позавчера", activity: active)
-                        sections.append(section)
-                    case _:
-                        let formatter = DateFormatter()
-                        formatter.timeStyle = .none
-                        formatter.dateStyle = .full
-                        formatter.timeZone = TimeZone.current
-                        let section = my_section(title: formatter.string(from: active.date!), activity: active)
-                        sections.append(section)
+            if lastedTimed <= 24 {
+                arrayToday.append(active)
+            } else if lastedTimed <= 48 {
+                arrayYesterday.append(active)
+            } else if lastedTimed <= 72 {
+                arrayDBY.append(active)
+            } else {
+                arrayOtherDate.append(active)
             }
-            sections = sections.sorted()
         }
-        
+            sections.append(my_section(title: "Сегодня", activity: arrayToday))
+            sections.append(my_section(title: "Вчера", activity: arrayYesterday))
+            sections.append(my_section(title: "Позавчера", activity: arrayDBY))
+            sections.append(my_section(title: "Ранее", activity: arrayOtherDate))
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let activity = data[indexPath.row]
-        let lastedTimed = abs(NSInteger(activity.date!.timeIntervalSinceNow/3600))
+        let activity = sections[indexPath.section]?.activity[indexPath.row]
+        let lastedTimed = abs(NSInteger(activity!.date!.timeIntervalSinceNow/3600))
         let cell = tableView.dequeueReusableCell(withIdentifier: "ActivityCellView", for: indexPath) as! ActivityCell
-        cell.activityKM.text = String(format: "%.2f", activity.distance) + " м"
-        cell.activityDT.text = String(format: "%.2f", activity.duration) + " с"
-        cell.activityNM.text = activity.name
+        cell.activityKM.text = String(format: "%.2f", activity!.distance) + " м"
+        cell.activityDT.text = String(format: "%.2f", activity!.duration) + " с"
+        cell.activityNM.text = activity!.name
         let lastDigit = lastedTimed % 10
         
         switch lastDigit {
@@ -122,7 +123,7 @@ class MyActivityViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let mySection = sections[section]
-        return mySection.title
+        return mySection?.title
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -158,9 +159,4 @@ class MyActivityViewController: UIViewController, UITableViewDelegate, UITableVi
         destination.activitykm = String(currentkm)
     }
 }
-
-extension my_section: Comparable {
-    static func < (lhs: my_section, rhs: my_section) -> Bool {
-           lhs.title < rhs.title
-       }}
 

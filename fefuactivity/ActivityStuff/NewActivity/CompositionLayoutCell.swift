@@ -13,6 +13,16 @@ class CompositionalLayoutCell: UICollectionViewCell {
     
     static let reuseId = "CompositionalLayoutCell"
     
+    override var isSelected: Bool {
+        didSet {
+            if isSelected == true{
+                self.layer.borderWidth = 2
+                self.layer.borderColor = UIColor.systemPurple.cgColor
+            } else {
+            }
+            ActivityImage.isHidden = !isSelected
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         clipsToBounds = true
@@ -27,4 +37,10 @@ class CompositionalLayoutCell: UICollectionViewCell {
         ActivityName.text = title
         ActivityImage.image = image
     }
+    
+    func returnLabel() -> String {
+        return ActivityName.text!
+    }
+    
+
 }
