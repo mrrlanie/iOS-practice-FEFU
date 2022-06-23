@@ -7,6 +7,13 @@
 
 import UIKit
 import CoreData
+import SwiftUI
+
+struct my_section {
+    var title: String
+    var activity: ActivityData
+    
+ }
 
 class MyActivityViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
@@ -17,8 +24,8 @@ class MyActivityViewController: UIViewController, UITableViewDelegate, UITableVi
     var currenttime: String = "0"
     var currentname: String = "Название"
     var currentlastedtime: String = "0"
-    var sectionnames = ["22.05.2022"]
     var data = [ActivityData]();
+    var sections = [my_section(title: "Сегодня", activity: ActivityData())]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,16 +37,18 @@ class MyActivityViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView.delegate = self
         tableView.dataSource = self
     }
+        
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         fetch()
+        sectionWork()
+        tableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = false
         self.navigationItem.setHidesBackButton(true, animated: true)
-        
     }
     
     @IBAction func activityButton(_ sender: UIButton){
@@ -56,28 +65,48 @@ class MyActivityViewController: UIViewController, UITableViewDelegate, UITableVi
         } catch {
             print(error)
         }
-        tableView.reloadData()
         
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
     
+    func sectionWork() {
+        for active in data {
+            let lastedTimed = abs(NSInteger(active.date!.timeIntervalSinceNow/3600))
+            print(lastedTimed)
+            switch lastedTimed {
+                    case 0..<24 :
+                        let section = my_section(title: "Сегодня", activity: active)
+                        sections.append(section)
+                    case 24..<48:
+                        sections.append(my_section(title: "Вчера", activity: active))
+                    case 48..<72:
+                        let section = my_section(title: "Позавчера", activity: active)
+                        sections.append(section)
+                    case _:
+                        let formatter = DateFormatter()
+                        formatter.timeStyle = .none
+                        formatter.dateStyle = .full
+                        formatter.timeZone = TimeZone.current
+                        let section = my_section(title: formatter.string(from: active.date!), activity: active)
+                        sections.append(section)
+            }
+            sections = sections.sorted()
+        }
+        
+    }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let activity = data[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ActivityCellView", for: indexPath) as! ActivityCell
-        cell.activityKM.text = String(format: "%.4f", activity.distance/1000) + " км"
-        if round(activity.duration) == 0 {
-            let durationInMins = activity.duration * 60
-            cell.activityDT.text = String(format: "%.4f", durationInMins) + " минут"
-        } else {
-            cell.activityDT.text = String(format: "%.1f", activity.duration) + " часов"
-            
-        }
-        cell.activityNM.text = activity.name
         let lastedTimed = abs(NSInteger(activity.date!.timeIntervalSinceNow/3600))
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ActivityCellView", for: indexPath) as! ActivityCell
+        cell.activityKM.text = String(format: "%.2f", activity.distance) + " м"
+        cell.activityDT.text = String(format: "%.2f", activity.duration) + " с"
+        cell.activityNM.text = activity.name
         let lastDigit = lastedTimed % 10
+        
         switch lastDigit {
             case 0, 5, 6, 7, 8, 9:
                 cell.activityLT.text =  String(lastedTimed) + " часов назад"
@@ -92,20 +121,20 @@ class MyActivityViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let section = self.sectionnames[section]
-        return section
+        let mySection = sections[section]
+        return mySection.title
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return sectionnames.count
+        return sections.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "ShowActivity", sender: tableView.cellForRow(at: indexPath))
         let activity = data[indexPath.row]
         currentname = activity.name!
-        currenttime = String(format: "%.1f", activity.duration) + " км"
-        currentkm = String(format: "%.4f", activity.distance/1000) + " км"
+        currenttime = String(format: "%.2f", activity.duration) + " c"
+        currentkm = String(format: "%.2f", activity.distance) + " м"
         let lastedTimed = abs(NSInteger(activity.date!.timeIntervalSinceNow/3600))
         let lastDigit = lastedTimed % 10
         switch lastDigit {
@@ -129,3 +158,9 @@ class MyActivityViewController: UIViewController, UITableViewDelegate, UITableVi
         destination.activitykm = String(currentkm)
     }
 }
+
+extension my_section: Comparable {
+    static func < (lhs: my_section, rhs: my_section) -> Bool {
+           lhs.title < rhs.title
+       }}
+

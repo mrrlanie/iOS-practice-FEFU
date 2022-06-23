@@ -79,8 +79,6 @@ class NewActivityViewController: UIViewController {
         userLocation = nil
         
         if pauseFlag == true {
-            activityDuration += currentDuration
-            currentDuration = TimeInterval()
             timer?.invalidate()
             locationManager.stopUpdatingLocation()
         } else {
@@ -96,8 +94,6 @@ class NewActivityViewController: UIViewController {
         locationManager.stopUpdatingLocation()
         let context = coreContainer.context
         let activity = ActivityData(context: context)
-        
-        activityDuration += currentDuration
         timer?.invalidate()
         
         let dateFormat = DateFormatter()
@@ -106,7 +102,8 @@ class NewActivityViewController: UIViewController {
         let activityEnd = dateFormat.string(from: activityDate! + activityDuration)
         
         activity.date = activityDate
-        activity.distance = round(activityDistance/1000)
+        activity.distance = activityDistance
+        activity.duration = activityDuration
         activity.start = activityStart
         activity.end = activityEnd
         activity.name = activityNameInButtons.text
@@ -152,7 +149,6 @@ class NewActivityViewController: UIViewController {
         viewWithChoice.isHidden = true
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerUpd), userInfo: nil, repeats: true)
         locationManager.startUpdatingLocation()
-            	
     }
     
     override func viewDidLoad() {
@@ -176,11 +172,9 @@ class NewActivityViewController: UIViewController {
         collectionView.collectionViewLayout = layout()
         collectionView.dataSource = self
         collectionView.register(CompositionalLayoutCell.nib(), forCellWithReuseIdentifier: CompositionalLayoutCell.reuseId)
-        
+                
         mapView.showsUserLocation = true
         mapView.delegate = self
-        
-        coreContainer.context.reset()
         
         for i in 0...1 {
             let image = UIImage(named: "image\(i)")!
@@ -221,10 +215,12 @@ extension NewActivityViewController: UICollectionViewDelegate, UICollectionViewD
         }
         let img = images[indexPath.row]
         let label = activityTypes[indexPath.row]
-        cell.layer.borderWidth = 2
-        cell.layer.borderColor = UIColor.purple.cgColor
         cell.configure(title: label, image: img)
-        activityNameInButtons.text = label
+        if cell.isHidden == false {
+            cell.layer.borderWidth = 2
+            cell.layer.borderColor = UIColor.systemPurple.cgColor
+            activityNameInButtons.text = label
+        }
         return cell
     }
     
