@@ -13,6 +13,20 @@
 		1DE4E5CC270A5CCE004A30CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DE4E5CA270A5CCE004A30CA /* Main.storyboard */; };
 		1DE4E5CE270A5CD0004A30CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DE4E5CD270A5CD0004A30CA /* Assets.xcassets */; };
 		1DE4E5D1270A5CD0004A30CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DE4E5CF270A5CD0004A30CA /* LaunchScreen.storyboard */; };
+		AFA1CBF22860D9DB00F24D16 /* CompositionLayoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA1CBF02860D9DB00F24D16 /* CompositionLayoutCell.swift */; };
+		AFA1CBF32860D9DB00F24D16 /* CompositionalLayoutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFA1CBF12860D9DB00F24D16 /* CompositionalLayoutCell.xib */; };
+		AFC25DDF28376BEC003093EB /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC25DDE28376BEC003093EB /* RegistrationController.swift */; };
+		AFC25DE128376CF2003093EB /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC25DE028376CF2003093EB /* LoginController.swift */; };
+		AFC25DF3283E2114003093EB /* MyActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC25DF2283E2114003093EB /* MyActivityViewController.swift */; };
+		AFC25DF5283E3597003093EB /* ActivityInformationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC25DF4283E3597003093EB /* ActivityInformationController.swift */; };
+		AFC25DF8283E4B5A003093EB /* ActivityCellViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC25DF6283E4B5A003093EB /* ActivityCellViewTableViewCell.swift */; };
+		AFC25DF9283E4B5A003093EB /* ActivityCellViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFC25DF7283E4B5A003093EB /* ActivityCellViewTableViewCell.xib */; };
+		AFC25DFB283EE7E7003093EB /* NewActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC25DFA283EE7E7003093EB /* NewActivityViewController.swift */; };
+		AFC25E082840B53B003093EB /* SegueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC25E072840B53B003093EB /* SegueController.swift */; };
+		AFC25E0F28434B1D003093EB /* ActivityData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFC25E0D28434B1D003093EB /* ActivityData.xcdatamodeld */; };
+		AFC25E1128434CAF003093EB /* CollectionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC25E1028434CAF003093EB /* CollectionCellView.swift */; };
+		AFC25E1428434DF7003093EB /* CoreContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC25E1328434DF7003093EB /* CoreContainer.swift */; };
+		AFC25E1628434FA3003093EB /* CoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC25E1528434FA3003093EB /* CoreController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +38,20 @@
 		1DE4E5CD270A5CD0004A30CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1DE4E5D0270A5CD0004A30CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1DE4E5D2270A5CD0004A30CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFA1CBF02860D9DB00F24D16 /* CompositionLayoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionLayoutCell.swift; sourceTree = "<group>"; };
+		AFA1CBF12860D9DB00F24D16 /* CompositionalLayoutCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompositionalLayoutCell.xib; sourceTree = "<group>"; };
+		AFC25DDE28376BEC003093EB /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
+		AFC25DE028376CF2003093EB /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		AFC25DF2283E2114003093EB /* MyActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyActivityViewController.swift; sourceTree = "<group>"; };
+		AFC25DF4283E3597003093EB /* ActivityInformationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityInformationController.swift; sourceTree = "<group>"; };
+		AFC25DF6283E4B5A003093EB /* ActivityCellViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCellViewTableViewCell.swift; sourceTree = "<group>"; };
+		AFC25DF7283E4B5A003093EB /* ActivityCellViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityCellViewTableViewCell.xib; sourceTree = "<group>"; };
+		AFC25DFA283EE7E7003093EB /* NewActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewActivityViewController.swift; sourceTree = "<group>"; };
+		AFC25E072840B53B003093EB /* SegueController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueController.swift; sourceTree = "<group>"; };
+		AFC25E0E28434B1D003093EB /* ActivityData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ActivityData.xcdatamodel; sourceTree = "<group>"; };
+		AFC25E1028434CAF003093EB /* CollectionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCellView.swift; sourceTree = "<group>"; };
+		AFC25E1328434DF7003093EB /* CoreContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreContainer.swift; sourceTree = "<group>"; };
+		AFC25E1528434FA3003093EB /* CoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +84,93 @@
 		1DE4E5C3270A5CCE004A30CA /* fefuactivity */ = {
 			isa = PBXGroup;
 			children = (
-				1DE4E5C4270A5CCE004A30CA /* AppDelegate.swift */,
-				1DE4E5C6270A5CCE004A30CA /* SceneDelegate.swift */,
-				1DE4E5C8270A5CCE004A30CA /* ViewController.swift */,
-				1DE4E5CA270A5CCE004A30CA /* Main.storyboard */,
+				AFA1CBE0285BA37900F24D16 /* MainStuff */,
+				AFA1CBDF285BA36900F24D16 /* CustomStuff */,
+				AFA1CBDE285BA35900F24D16 /* LoginStuff */,
+				AFA1CBDD285BA34B00F24D16 /* RegistrationStuff */,
+				AFA1CBDC285BA32B00F24D16 /* ActivityStuff */,
+				AFC25E1228434DD3003093EB /* CoreDataStuff */,
 				1DE4E5CD270A5CD0004A30CA /* Assets.xcassets */,
-				1DE4E5CF270A5CD0004A30CA /* LaunchScreen.storyboard */,
 				1DE4E5D2270A5CD0004A30CA /* Info.plist */,
 			);
 			path = fefuactivity;
+			sourceTree = "<group>";
+		};
+		AFA1CBDC285BA32B00F24D16 /* ActivityStuff */ = {
+			isa = PBXGroup;
+			children = (
+				AFA1CBEF2860D97E00F24D16 /* NewActivity */,
+				AFA1CBEE2860D94A00F24D16 /* ActivityTable */,
+			);
+			path = ActivityStuff;
+			sourceTree = "<group>";
+		};
+		AFA1CBDD285BA34B00F24D16 /* RegistrationStuff */ = {
+			isa = PBXGroup;
+			children = (
+				AFC25DDE28376BEC003093EB /* RegistrationController.swift */,
+			);
+			path = RegistrationStuff;
+			sourceTree = "<group>";
+		};
+		AFA1CBDE285BA35900F24D16 /* LoginStuff */ = {
+			isa = PBXGroup;
+			children = (
+				AFC25DE028376CF2003093EB /* LoginController.swift */,
+			);
+			path = LoginStuff;
+			sourceTree = "<group>";
+		};
+		AFA1CBDF285BA36900F24D16 /* CustomStuff */ = {
+			isa = PBXGroup;
+			children = (
+				AFC25E072840B53B003093EB /* SegueController.swift */,
+			);
+			path = CustomStuff;
+			sourceTree = "<group>";
+		};
+		AFA1CBE0285BA37900F24D16 /* MainStuff */ = {
+			isa = PBXGroup;
+			children = (
+				1DE4E5C4270A5CCE004A30CA /* AppDelegate.swift */,
+				1DE4E5C6270A5CCE004A30CA /* SceneDelegate.swift */,
+				1DE4E5C8270A5CCE004A30CA /* ViewController.swift */,
+				1DE4E5CF270A5CD0004A30CA /* LaunchScreen.storyboard */,
+				1DE4E5CA270A5CCE004A30CA /* Main.storyboard */,
+			);
+			path = MainStuff;
+			sourceTree = "<group>";
+		};
+		AFA1CBEE2860D94A00F24D16 /* ActivityTable */ = {
+			isa = PBXGroup;
+			children = (
+				AFC25DF4283E3597003093EB /* ActivityInformationController.swift */,
+				AFC25DF7283E4B5A003093EB /* ActivityCellViewTableViewCell.xib */,
+				AFC25DF6283E4B5A003093EB /* ActivityCellViewTableViewCell.swift */,
+				AFC25DF2283E2114003093EB /* MyActivityViewController.swift */,
+			);
+			path = ActivityTable;
+			sourceTree = "<group>";
+		};
+		AFA1CBEF2860D97E00F24D16 /* NewActivity */ = {
+			isa = PBXGroup;
+			children = (
+				AFC25DFA283EE7E7003093EB /* NewActivityViewController.swift */,
+				AFA1CBF02860D9DB00F24D16 /* CompositionLayoutCell.swift */,
+				AFA1CBF12860D9DB00F24D16 /* CompositionalLayoutCell.xib */,
+				AFC25E1028434CAF003093EB /* CollectionCellView.swift */,
+			);
+			path = NewActivity;
+			sourceTree = "<group>";
+		};
+		AFC25E1228434DD3003093EB /* CoreDataStuff */ = {
+			isa = PBXGroup;
+			children = (
+				AFC25E0D28434B1D003093EB /* ActivityData.xcdatamodeld */,
+				AFC25E1328434DF7003093EB /* CoreContainer.swift */,
+				AFC25E1528434FA3003093EB /* CoreController.swift */,
+			);
+			path = CoreDataStuff;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,9 +230,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFA1CBF32860D9DB00F24D16 /* CompositionalLayoutCell.xib in Resources */,
 				1DE4E5D1270A5CD0004A30CA /* LaunchScreen.storyboard in Resources */,
 				1DE4E5CE270A5CD0004A30CA /* Assets.xcassets in Resources */,
 				1DE4E5CC270A5CCE004A30CA /* Main.storyboard in Resources */,
+				AFC25DF9283E4B5A003093EB /* ActivityCellViewTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,9 +245,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFC25DF8283E4B5A003093EB /* ActivityCellViewTableViewCell.swift in Sources */,
 				1DE4E5C9270A5CCE004A30CA /* ViewController.swift in Sources */,
+				AFC25E1128434CAF003093EB /* CollectionCellView.swift in Sources */,
+				AFC25DFB283EE7E7003093EB /* NewActivityViewController.swift in Sources */,
+				AFC25E1628434FA3003093EB /* CoreController.swift in Sources */,
+				AFC25E0F28434B1D003093EB /* ActivityData.xcdatamodeld in Sources */,
+				AFC25DF3283E2114003093EB /* MyActivityViewController.swift in Sources */,
+				AFA1CBF22860D9DB00F24D16 /* CompositionLayoutCell.swift in Sources */,
 				1DE4E5C5270A5CCE004A30CA /* AppDelegate.swift in Sources */,
+				AFC25E082840B53B003093EB /* SegueController.swift in Sources */,
 				1DE4E5C7270A5CCE004A30CA /* SceneDelegate.swift in Sources */,
+				AFC25DF5283E3597003093EB /* ActivityInformationController.swift in Sources */,
+				AFC25E1428434DF7003093EB /* CoreContainer.swift in Sources */,
+				AFC25DDF28376BEC003093EB /* RegistrationController.swift in Sources */,
+				AFC25DE128376CF2003093EB /* LoginController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,16 +406,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4TAXLE7T2Y;
+				DEVELOPMENT_TEAM = TCBCSW4PDZ;
 				INFOPLIST_FILE = fefuactivity/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.feip.fefuactivity;
+				PRODUCT_BUNDLE_IDENTIFIER = melanie.fefutracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -306,16 +428,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4TAXLE7T2Y;
+				DEVELOPMENT_TEAM = TCBCSW4PDZ;
 				INFOPLIST_FILE = fefuactivity/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.feip.fefuactivity;
+				PRODUCT_BUNDLE_IDENTIFIER = melanie.fefutracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -343,6 +467,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AFC25E0D28434B1D003093EB /* ActivityData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AFC25E0E28434B1D003093EB /* ActivityData.xcdatamodel */,
+			);
+			currentVersion = AFC25E0E28434B1D003093EB /* ActivityData.xcdatamodel */;
+			path = ActivityData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1DE4E5B9270A5CCE004A30CA /* Project object */;
 }
