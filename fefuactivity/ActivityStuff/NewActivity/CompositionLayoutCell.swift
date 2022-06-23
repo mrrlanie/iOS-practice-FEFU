@@ -13,20 +13,23 @@ class CompositionalLayoutCell: UICollectionViewCell {
     
     static let reuseId = "CompositionalLayoutCell"
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        layer.cornerRadius = 8
+        isSelected = false
+        self.clipsToBounds = true
+    }
+    
     override var isSelected: Bool {
         didSet {
-            if isSelected == true{
+            if isSelected {
                 self.layer.borderWidth = 2
                 self.layer.borderColor = UIColor.systemPurple.cgColor
             } else {
+                self.tintColor = .lightGray
             }
             ActivityImage.isHidden = !isSelected
         }
-    }
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        clipsToBounds = true
-        layer.cornerRadius = 8
     }
     
     static func nib() -> UINib {

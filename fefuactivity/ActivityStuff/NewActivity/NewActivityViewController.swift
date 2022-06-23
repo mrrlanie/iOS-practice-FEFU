@@ -172,7 +172,6 @@ class NewActivityViewController: UIViewController {
         collectionView.collectionViewLayout = layout()
         collectionView.dataSource = self
         collectionView.register(CompositionalLayoutCell.nib(), forCellWithReuseIdentifier: CompositionalLayoutCell.reuseId)
-        
         mapView.showsUserLocation = true
         mapView.delegate = self
         
@@ -216,6 +215,8 @@ extension NewActivityViewController: UICollectionViewDelegate, UICollectionViewD
         let img = images[indexPath.row]
         let label = activityTypes[indexPath.row]
         cell.configure(title: label, image: img)
+        cell.isHighlighted = true
+        
         return cell
     }
     
