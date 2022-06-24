@@ -22,14 +22,10 @@ class CompositionalLayoutCell: UICollectionViewCell {
     
     override var isSelected: Bool {
         didSet {
-            if isSelected {
-                self.layer.borderWidth = 2
-                self.layer.borderColor = UIColor.systemPurple.cgColor
-            } else {
-                self.tintColor = .lightGray
-            }
-            ActivityImage.isHidden = !isSelected
+            self.layer.borderWidth = isSelected ? 2:1
+            self.layer.borderColor = isSelected ? UIColor.systemPurple.cgColor : UIColor.lightGray.cgColor
         }
+        
     }
     
     static func nib() -> UINib {
