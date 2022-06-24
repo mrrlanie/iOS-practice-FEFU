@@ -79,23 +79,25 @@ class MyActivityViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func sectionWork() {
-        for active in data {
-            let lastedTimed = abs(NSInteger(active.date!.timeIntervalSinceNow/3600))
-            print(lastedTimed)
-            if lastedTimed <= 24 {
-                arrayToday.append(active)
-            } else if lastedTimed <= 48 {
-                arrayYesterday.append(active)
-            } else if lastedTimed <= 72 {
-                arrayDBY.append(active)
-            } else {
-                arrayOtherDate.append(active)
+        if data.count != 0 {
+            for active in data {
+                let lastedTimed = abs(NSInteger(active.date!.timeIntervalSinceNow/3600))
+                print(lastedTimed)
+                if lastedTimed <= 24 {
+                    arrayToday.append(active)
+                } else if lastedTimed <= 48 {
+                    arrayYesterday.append(active)
+                } else if lastedTimed <= 72 {
+                    arrayDBY.append(active)
+                } else {
+                    arrayOtherDate.append(active)
+                }
             }
+                sections.append(my_section(title: "Сегодня", activity: arrayToday))
+                sections.append(my_section(title: "Вчера", activity: arrayYesterday))
+                sections.append(my_section(title: "Позавчера", activity: arrayDBY))
+                sections.append(my_section(title: "Ранее", activity: arrayOtherDate))
         }
-            sections.append(my_section(title: "Сегодня", activity: arrayToday))
-            sections.append(my_section(title: "Вчера", activity: arrayYesterday))
-            sections.append(my_section(title: "Позавчера", activity: arrayDBY))
-            sections.append(my_section(title: "Ранее", activity: arrayOtherDate))
     }
     
     

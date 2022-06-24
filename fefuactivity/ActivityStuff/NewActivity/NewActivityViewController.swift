@@ -26,7 +26,7 @@ class NewActivityViewController: UIViewController {
     @IBOutlet weak var pauseAction: UIButton!
     @IBOutlet weak var finishAction: UIButton!
     
-    var activityTypes = ["Велосипед", "Бег"]
+    var activityTypes = ["Велосипед", "Бег", "Ходьба"]
     
     private var coreContainer = CoreContainer.instance
     
@@ -38,6 +38,7 @@ class NewActivityViewController: UIViewController {
     private var currentDuration: TimeInterval = TimeInterval()
     private var pauseFlag: Bool = true
     private var activityDate: Date?
+    private var selectedIndex: IndexPath?
     
     var images = [UIImage]()
     var activityList = [String]()
@@ -172,30 +173,25 @@ class NewActivityViewController: UIViewController {
         collectionView.collectionViewLayout = layout()
         collectionView.dataSource = self
         collectionView.register(CompositionalLayoutCell.nib(), forCellWithReuseIdentifier: CompositionalLayoutCell.reuseId)
-        
         mapView.showsUserLocation = true
         mapView.delegate = self
         
-        for i in 0...1 {
-            let image = UIImage(named: "image\(i)")!
+        for i in 0...2 {
+            let image = UIImage(named: "cell_image")!
             images.append(image)
         }
     }
     		
     private func layout() -> UICollectionViewCompositionalLayout{
         return UICollectionViewCompositionalLayout { (sectionNumber, env ) -> NSCollectionLayoutSection in
-            
             let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
-            
-            item.contentInsets.trailing = 16
-            
-            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9), heightDimension: .absolute(90))
+            item.contentInsets.trailing = 8
+            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9), heightDimension: .absolute(99))
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
             
             let section = NSCollectionLayoutSection(group: group)
-            section.orthogonalScrollingBehavior = .paging
-            section.contentInsets.leading = 16
+            section.orthogonalScrollingBehavior = .continuous
             return section
         }
         
@@ -209,6 +205,14 @@ class NewActivityViewController: UIViewController {
 private let userLocationIdentifier = "user_icon"
 
 extension NewActivityViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as? CompositionalLayoutCell
+        if cell?.isSelected == true {
+            activityNameInButtons.text = cell!.returnLabel()
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CompositionalLayoutCell.reuseId, for: indexPath) as? CompositionalLayoutCell else {
             return UICollectionViewCell()
@@ -221,7 +225,7 @@ extension NewActivityViewController: UICollectionViewDelegate, UICollectionViewD
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
