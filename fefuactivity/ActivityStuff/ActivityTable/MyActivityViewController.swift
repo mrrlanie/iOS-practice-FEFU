@@ -74,7 +74,6 @@ class MyActivityViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print()
         return (sections[section]?.activity.count)!
     }
     
@@ -82,7 +81,6 @@ class MyActivityViewController: UIViewController, UITableViewDelegate, UITableVi
         if data.count != 0 {
             for active in data {
                 let lastedTimed = abs(NSInteger(active.date!.timeIntervalSinceNow/3600))
-                print(lastedTimed)
                 if lastedTimed <= 24 {
                     arrayToday.append(active)
                 } else if lastedTimed <= 48 {

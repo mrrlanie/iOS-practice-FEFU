@@ -170,7 +170,6 @@
                             <constraint firstItem="SlG-DN-nWf" firstAttribute="top" secondItem="p0b-JA-gwb" secondAttribute="top" constant="346" id="4kF-0p-1jP"/>
                             <constraint firstItem="SlG-DN-nWf" firstAttribute="leading" secondItem="p0b-JA-gwb" secondAttribute="leading" constant="128" id="bbF-8n-9Te"/>
                             <constraint firstItem="p0b-JA-gwb" firstAttribute="trailing" secondItem="SlG-DN-nWf" secondAttribute="trailing" constant="128" id="kir-7Q-ws1"/>
-                            <constraint firstItem="p0b-JA-gwb" firstAttribute="bottom" secondItem="SlG-DN-nWf" secondAttribute="bottom" constant="350" id="qqc-zX-K9w"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="NAL-T5-EJk"/>
